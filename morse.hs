@@ -4,7 +4,7 @@ decWith (_:tree) (x:xs) | x=='.' = decWith fstHalf xs
                   | x=='-' = decWith sndHalf xs
 --                  | otherwise = Left $ "Trovati simboli diversi da \".\" o \"-\"!"
                   where
-                      half = length xs `div` 2
+                      half = length tree `div` 2
                       (fstHalf, sndHalf) = splitAt half tree
 --decWith _ _ = Left "La lettera è troppo lunga!"
 
