@@ -1,3 +1,5 @@
+import Data.List.Split
+
 decWith (x:_)  [] = x
 decWith (_:tree) (x:xs) | x=='.' = decWith fstHalf xs
                   | x=='-' = decWith sndHalf xs
@@ -19,7 +21,7 @@ decWord xs | '/' `elem` xs = let (letter, (_:word)) = break (=='/') xs in
 --or with foldl:
 
 dec' :: String -> Char
-dec' x = head $ foldl f "_eisuarwtndkmgo" x
+dec' x = head $ foldl f " eisuarwtndkmgo" x
 
 f :: String -> Char -> String
 f (_:acc) x | x=='.' = fstHalf
@@ -27,3 +29,6 @@ f (_:acc) x | x=='.' = fstHalf
             where
               half = length acc `div` 2
               (fstHalf, sndHalf) = splitAt half acc
+
+decWord' :: String -> String
+decWord' x = map dec' $ splitOn "/" x
