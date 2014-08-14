@@ -1,14 +1,14 @@
 import Data.List.Split
 
-dec' :: String -> Char
-dec' x = head $ foldl f " eisuarwtndkmgo" x
+dec :: String -> Char
+dec letter = head $ foldl traverseTree " eisuarwtndkmgo" letter
 
-f :: String -> Char -> String
-f (_:acc) x | x=='.' = fstHalf
-            | x=='-' = sndHalf
-            where
-              half = length acc `div` 2
-              (fstHalf, sndHalf) = splitAt half acc
+traverseTree :: String -> Char -> String
+traverseTree (_:tree) selector | selector=='.' = fstHalf
+                               | selector=='-' = sndHalf
+                               where
+                                 half = length tree `div` 2
+                                 (fstHalf, sndHalf) = splitAt half tree
 
-decWord' :: String -> String
-decWord' x = map dec' $ splitOn "/" x
+decWord :: String -> String
+decWord word = map dec $ splitOn "/" word
