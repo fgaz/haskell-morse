@@ -1,7 +1,7 @@
 import Data.List.Split
 
 dec :: String -> Char
-dec letter = head $ foldl traverseTree " eisuarwtndkmgo" letter
+dec letter = head $ foldl traverseTree " eishvuf?arl?wpjtndbxkcymgzqo??" letter
 
 traverseTree :: String -> Char -> String
 traverseTree (_:tree) selector | selector=='.' = fstHalf
