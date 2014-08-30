@@ -8,3 +8,7 @@ A simple morse translator inspired by [this thread](http://www.reddit.com/r/prog
     'k'
     decWord "...././.-../.-../---//.--/---/.-./.-../-.."
     "hello world"
+    enc 'k'
+    ".-."
+    encWord "hello world"
+    "...././.-../.-../---//.--/---/.-./.-../-.."
