@@ -1,5 +1,5 @@
 import Data.List.Split
-import qualified Data.List as L
+import Data.List
 
 dec :: String -> Char
 dec letter = head $ foldl traverseTree " eishvuf?arl?wpjtndbxkcymgzqo??" letter
