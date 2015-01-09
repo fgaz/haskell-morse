@@ -1,5 +1,5 @@
 import Data.List.Split
-import Data.List
+import Data.List (intercalate)
 
 dec :: String -> Char
 dec letter = head $ foldl traverseTree " eishvuf?arl?wpjtndbxkcymgzqo??" letter
@@ -27,4 +27,4 @@ enc :: Char -> String
 enc = encWith " eishvuf?arl?wpjtndbxkcymgzqo??"
 
 encWord :: String -> String
-encWord word = L.intercalate "/" $ map enc word
+encWord word = intercalate "/" $ map enc word
